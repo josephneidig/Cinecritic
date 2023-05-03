@@ -1,38 +1,355 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #22222a;
+}
+
+header {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  background-color: #66ff70;
+}
+
+header .top {
+  width: 100%;
+  max-width: 960px;
+  display: table;
+  margin: 0 auto;
+}
+
+header h1 {
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 500;
+  text-align: left;
+  display: inline;
+}
+
+header h2 {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 500;
+  display: block;
+  text-align: right;
+  float: right;
+  margin: 24px 25px 0 0;
+}
+
+header button {
+
+}
+
+header form {
+  margin-top: 0px;
+  float: right;
+  display: inline;
+}
+
+header .quoteEntry {
+  width: 60%;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  outline: none;
+
+  background: none;
+  background-color: #EFEFEF;
+  border-radius: 8px;
+
+  color: #53565A;
+  font-size: 14px;
+  font-weight: 300;
+
+  transition: 0.25s ease-out;
+}
+
+header .quoteSubmit {
+  padding: 10px;
+  border: none;
+  outline: none;
+
+  background: none;
+  background-color: #EFEFEF;
+  border-radius: 8px;
+
+  color: #53565A;
+  font-size: 14px;
+  font-weight: 300;
+
+  transition: 0.25s ease-out;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 15px;
+}
+
+.search {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0px;
+
+  border: none;
+  outline: none;
+
+  background: none;
+  background-color: #EFEFEF;
+  border-radius: 8px;
+
+  color: #53565A;
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.25s ease-out;
+}
+
+.search:focus {
+  box-shadow: 0px 0px 4px 2px #66ff70;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px;
+}
+
+.results .result {
+  width: 33.33%;
+  min-width: 250px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.results .result img {
+  display: block;
+  width: 100%;
+}
+
+.results .result h3 {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+  background: #383840;
+  flex: 1 1 100%;
+  transition: 0.4s ease-out;
+}
+
+.results .result:hover h3 {
+  background: #EFEFEF;
+  color: #22222a;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #22222a;
+  overflow-y: scroll;
+}
+
+.popup .content {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 25px;
+  color: #FFF;
+}
+
+.popup .content h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.popup .content h2 span {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.popup .content .rating {
+  margin-bottom: 30px;
+}
+
+.popup .content .plot {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px 30px;
+}
+
+.popup .content .plot img {
+  flex: 1 1 50%;
+  max-width: 300px;
+  padding: 0px 15px;
+}
+
+.popup .content .plot p {
+  flex: 1 1 50%;
+  padding: 15px;
+}
+
+.popup .content .close {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+
+  background: #4a4a52;
+  color: #FFF;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: 0.4s ease-out;
+}
+
+.popup .content .close:hover {
+  background: #383840;
+}
+
+.popup .content .reviewBtn {
+  display: inline-block;
+  padding: 15px 30px;
+  margin-left: 35px;
+  font-size: 18px;
+  font-weight: 700;
+
+  background: #4a4a52;
+  color: #FFF;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: 0.4s ease-out;
+}
+
+.popup .content .reviewBtn:hover {
+  background: #383840;
+}
+
+.popup .content .review {
+  display: inline-block;
+  padding: 15px 30px;
+  margin-left: 35px;
+  font-size: 18px;
+  font-weight: 700;
+  width: 64%;
+  background: #4a4a52;
+  color: #FFF;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: 0.4s ease-out;
+}
+
+.popup .content .review:hover {
+  cursor: text;
+}
+
+.popup .content .review::placeholder {
+  color: #AAA;
+}
+
+.signup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #22222a;
+  overflow-y: scroll;
+}
+
+.signup .content {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 25px;
+  color: #FFF;
+}
+
+.userInfo {
+  margin-top: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userInfo h1 {
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 500;
+  padding-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userInfo input {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+
+  border: none;
+  outline: none;
+
+  background: none;
+  background-color: #EFEFEF;
+  border-radius: 8px;
+
+  color: #53565A;
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.25s ease-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.userInfo .submit {
+  max-width: 160px;
+  background-color: #993333;
+  margin-right: 35px;
+  color: #EFEFEF;
+  cursor: pointer;
+  display: inline;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.loginNav {
+  display: inline;
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+  margin-left: 35px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: none;
+  outline: none;
+
+  background: none;
+  border-radius: 8px;
+
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.25s ease-out;
+
+  max-width: 160px;
+  background-color: #339933;
+  color: #EFEFEF;
+  cursor: pointer;
 }
